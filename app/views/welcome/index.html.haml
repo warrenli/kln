@@ -1,0 +1,19 @@
+- if I18n.locale.to_s == "en"
+  %h2{ :align => "center" }
+    Hello World
+  %p
+    Good Day Everybody
+- elsif I18n.locale.to_s == "zh-HK"
+  %h2{ :align => "center" }
+    你好嗎
+  %p
+    大家好
+- else
+  %h2{ :align => "center" }
+    Hello World 你好嗎
+  %p
+    Good Day Everybody 大家好
+
+%p
+  = link_to t("page.posts.index.title"), posts_path
+

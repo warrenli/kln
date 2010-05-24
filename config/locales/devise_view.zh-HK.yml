@@ -1,0 +1,30 @@
+zh-HK:
+  devise_view:
+    confirmations:
+      resend_confirmation_instructions: "寄出確認帳戶的指示"
+    passwords:
+      send_me_reset_password_instructions: "寄出重置帳戶密碼的指示"
+      change_my_password: "設定新的帳戶密碼"
+    registrations:
+      edit: "修改"
+      update: "碓認修改"
+      leave_blank_msg: "如不須要改變請留空白"
+      current_password: "現時的帳戶密碼"
+      current_password_msg: "請輸入現時的帳戶密碼覆核身份"
+      cancel_my_account: "刪除我的帳戶"
+      unhappy: "不須要繼續使用這系統!"
+      confirm_cancel_my_account: "真的要刪除我的帳戶"
+      go_home: "回到首頁"
+    shared:
+      sign_in: "登入"
+      sign_out: "登出"
+      sign_up: "登記"
+      signed_in_as: "已登入"
+      not_you: "如不是閱下"
+      or: "或"
+      forgot_your_password: "忘記了帳戶密碼?"
+      didnt_receive_confirmation_instructions: "未收到確認帳戶的指示?"
+      didnt_receive_unlock_instructions: "未收到解封帳戶的指示?"
+    unlocks:
+      resend_unlock_instructions: "寄出解封帳戶的指示"
+

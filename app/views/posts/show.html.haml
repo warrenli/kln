@@ -1,0 +1,82 @@
+- title t("page.posts.show.title")
+
+%p
+  %strong
+    = "Author" + " : "
+  = @post.user.email
+%p
+  %strong
+    = Post.human_attribute_name("title") + " : "
+  = @post.title
+%p
+  %strong
+    = Post.human_attribute_name("body") + " : "
+  = @post.body
+%p
+  %strong
+    = Post.human_attribute_name("published_on") + " : "
+  = @post.published_on
+
+%p
+  = link_to t("page.edit_link"), edit_post_path(@post)
+  |
+  = link_to t("page.destroy_link"), @post, :confirm => t("page.are_you_sure"), :method => :delete
+  |
+  = link_to t("page.delete_link"), delete_post_path(@post), :class => "delete_post"
+  |
+  = link_to t("page.posts.index.title"), posts_path
+
+- if @post.comments.count == 0
+  %h2#comment_summary
+    = t("page.posts.show.no_comment")
+-else
+  %h2#comment_summary
+    =  @post.comments.count.to_s + " " + Comment.human_name
+
+%div#comments
+  = render :partial => @post.comments
+
+= form_for [@post, Comment.new], :remote => true do |f|
+  %fieldset
+    %legend
+      = t("page.posts.show.add_comment_legend")
+    %p
+      = f.label :email
+      %br
+      = f.text_field :email
+    %p
+      = f.label :author
+      %br
+      = f.text_field :author
+    %p
+      = f.label :body
+      %br
+      = f.text_area :body
+    %p
+      = f.submit  :disable_with => "Please wait..."
+
+:javascript
+
+  jQuery(function($) { // document ready
+
+    // Uses the new live method in jQuery 1.3+
+    $('a.delete_post').live('click', function(event) {
+
+        if ( confirm("Are you sure you want to delete this Post?") )
+            $.ajax({
+                url: this.href.replace('/delete', ''),
+                type: 'post',
+                dataType: 'script',
+                data: { '_method': 'delete' },
+                success: function() {
+                    // the item has been deleted
+                    // might want to remove it from the interface
+                    // or redirect or reload by setting window.location
+                    location.href='/posts';
+                }
+            });
+
+        return false;
+    });
+  });
+

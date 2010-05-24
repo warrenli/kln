@@ -1,0 +1,10 @@
+one:
+  title: MyString
+  body: MyText
+  published_on: <%= 5.days.ago.to_s :db %>
+
+two:
+  title: MyString
+  body: MyText
+  published_on: <%= 5.days.ago.to_s :db %>
+

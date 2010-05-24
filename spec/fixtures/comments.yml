@@ -1,0 +1,11 @@
+one:
+  post_id: 1
+  email: MyString
+  author: MyString
+  body: MyText
+
+two:
+  post_id: 1
+  email: MyString
+  author: MyString
+  body: MyText

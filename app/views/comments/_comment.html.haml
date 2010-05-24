@@ -1,0 +1,11 @@
+= div_for comment do
+  %p
+    %strong
+      = t("page.comments._comment.posted")
+    == #{ time_ago_in_words(comment.created_at) }
+    %br
+    %a{ :href => "mailto:#{comment.email}" }
+      = comment.author.force_encoding("UTF-8")
+    %br
+    = comment.body.force_encoding("UTF-8")
+

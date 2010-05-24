@@ -1,0 +1,27 @@
+en:
+  page:
+    yes_text: "Yes"
+    no_text: "No"
+    show_link: "Show"
+    edit_link: "Edit"
+    destroy_link: "Destroy"
+    delete_link: "Delete"
+    are_you_sure: "Are you sure"
+
+    posts:
+      index:
+        title: "Post Listing"
+      new:
+        title: "New Post"
+      edit:
+        title: "Edit Post"
+      show:
+        title: "Show Post"
+        no_comment: "No comment"
+        add_comment_legend: "Add new comment"
+      delete:
+        title: "Are you sure?"
+    comments:
+      _comment:
+        posted: "Posted: "
+

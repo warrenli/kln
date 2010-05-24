@@ -1,0 +1,6 @@
+- title t("page.posts.edit.title")
+
+= render 'form'
+
+== #{ link_to t("page.show_link"), @post } | #{ link_to t("page.posts.index.title"), posts_path }
+

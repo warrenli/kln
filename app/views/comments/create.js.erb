@@ -1,0 +1,5 @@
+$("#comments").append("<%= escape_javascript(render(:partial => @comment)) %>");
+$("#comments .comment:last").effect("highlight", {}, 5000);
+$("#comment_summary").html("<%= @post.comments.count.to_s + " " + Comment.human_name %>");
+clear_form_elements("#new_comment");
+

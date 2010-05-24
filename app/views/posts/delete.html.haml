@@ -1,0 +1,20 @@
+- title t("page.posts.delete.title")
+
+%p
+  %strong
+    = Post.human_attribute_name("title") + " : "
+  = @post.title
+%p
+  %strong
+    = Post.human_attribute_name("body") + " : "
+  = @post.body
+%p
+  %strong
+    = Post.human_attribute_name("published_on") + " : "
+  = @post.published_on
+
+= form_for @post, :html => { :method => 'delete' } do |f|
+  %p
+    = f.submit t("page.yes_text")
+    = f.submit t("page.no_text"), :name => "cancel"
+

@@ -1,0 +1,23 @@
+= form_for @post do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :body
+    %br
+    = f.text_area :body
+  %p
+    = f.label :published_on
+    %br
+    = #f.date_select :published_on
+    = f.text_field :published_on
+  %p
+    = f.submit :disable_with => "Please wait..."
+
+:javascript
+  $(function() {
+    $("#post_published_on").datepicker({ dateFormat: 'yy-mm-dd'});
+  });
+

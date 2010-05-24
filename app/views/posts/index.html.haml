@@ -1,0 +1,47 @@
+- title t("page.posts.index.title")
+
+%table
+  %thead
+    %tr
+      %th= Post.human_attribute_name('title')
+      %th= Post.human_attribute_name('body')
+      %th= Post.human_attribute_name('published_on')
+      %th{ :colspan => 4 }
+
+  %tbody
+    - for post in @posts
+      %tr{ :class => cycle(:odd, :even) }
+        %td= post.title
+        %td= post.body
+        %td= post.published_on
+        %td= link_to t("page.show_link"), post
+        %td= link_to t("page.edit_link"), edit_post_path(post)
+        %td= link_to t("page.destroy_link"), post, :confirm => t("page.are_you_sure"), :method => :delete
+        %td= link_to t("page.delete_link"), delete_post_path(post), :class => "delete_post"
+
+%p= link_to t("page.posts.new.title"), new_post_path
+
+:javascript
+  jQuery(function($) { // document ready
+
+    // Uses the new live method in jQuery 1.3+
+    $('a.delete_post').live('click', function(event) {
+
+        if ( confirm("Are you sure you want to delete this PPost?") )
+            $.ajax({
+                url: this.href.replace('/delete', ''),
+                type: 'post',
+                dataType: 'script',
+                data: { '_method': 'delete' },
+                success: function() {
+                    // the item has been deleted
+                    // might want to remove it from the interface
+                    // or redirect or reload by setting window.location
+                    location.href='/posts';
+                }
+            });
+
+        return false;
+    });
+  });
+

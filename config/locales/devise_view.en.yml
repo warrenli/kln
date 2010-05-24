@@ -1,0 +1,30 @@
+en:
+  devise_view:
+    confirmations:
+      resend_confirmation_instructions: "Resend confirmation instructions"
+    passwords:
+      send_me_reset_password_instructions: "Send me reset password instructions"
+      change_my_password: "Change my password"
+    registrations:
+      edit: "Edit"
+      update: "Update"
+      leave_blank_msg: "leave blank if you don't want to change it"
+      current_password: "Current password"
+      current_password_msg: "we need your current password to confirm your changes"
+      cancel_my_account: "Cancel my account"
+      unhappy: "Unhappy?"
+      confirm_cancel_my_account: "Are you sure?"
+      go_home: "Home"
+    shared:
+      sign_in: "Sign in"
+      sign_out: "Sign out"
+      sign_up: "Sign up"
+      signed_in_as: "Signed in as"
+      not_you: "Not you?"
+      or: "or"
+      forgot_your_password: "Forgot your password?"
+      didnt_receive_confirmation_instructions: "Didn't receive confirmation instructions?"
+      didnt_receive_unlock_instructions: "Didn't receive unlock instructions?"
+    unlocks:
+      resend_unlock_instructions: "Resend unlock instructions"
+

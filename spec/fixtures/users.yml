@@ -1,0 +1,8 @@
+peter:
+  email: "peter@example.com"
+  encrypted_password: "1e813f0af1e5320ee5553018eaaf042fb58de69a"
+  password_salt: "X-_8aicbhGSOLWvB32Hu"
+  time_zone: "Hong Kong"
+  created_at: <%= 5.days.ago.to_s :db %>
+  updated_at: <%= 5.days.ago.to_s :db %>
+

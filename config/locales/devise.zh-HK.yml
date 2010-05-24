@@ -1,0 +1,37 @@
+zh-HK:
+  errors:
+    messages:
+      not_found: "找不到"
+      already_confirmed: "已確認"
+      not_locked: "沒有鎖定"
+
+  devise:
+    failure:
+      unauthenticated: '您需要登錄或註冊，才可繼續。'
+      unconfirmed: '你必須確認您的帳戶，才可繼續。'
+      locked: '您的帳戶已被鎖定。'
+      invalid: '電子郵件或密碼無效。'
+      invalid_token: '無效的認證令牌。'
+      timeout: '您的對話時段已過期，請重新登錄。'
+      inactive: '您的帳戶還沒有啟動。'
+    sessions:
+      signed_in: '登錄成功。'
+      signed_out: '經已成功登出。'
+    passwords:
+      send_instructions: '您將收到一封電子郵件，並指示有關如何重置您的密碼。'
+      updated: '您的密碼已成功更改。您現在已登錄。'
+    confirmations:
+      send_instructions: '您將收到一封電子郵件，並指示有關如何確認您的帳戶。'
+      confirmed: '您的帳戶已成功確認。您現在已登錄。'
+    registrations:
+      signed_up: '您已成功註冊，確認帳戶的指示已發送到您的電子郵件。'
+      updated: '已成功更新您的帳戶資料。'
+      destroyed: '再見！您的帳戶已成功取消。我們希望很快再見到你。.'
+    unlocks:
+      send_instructions: '您將收到一封電子郵件，並指示有關如何解封自己的帳戶。'
+      unlocked: '您的帳戶已成功解鎖。您現在已登錄。'
+    mailer:
+      confirmation_instructions: '確認帳戶的指示'
+      reset_password_instructions: '重設密碼的指示'
+      unlock_instructions: '帳戶解封的指示'
+

@@ -1,0 +1,45 @@
+zh-HK:
+  activerecord:
+    errors:
+      # You can define own errors for models or model attributes.
+      # The values :model, :attribute and :value are always available for interpolation.
+      #
+      # For example,
+      #   models:
+      #     user:
+      #       blank: "This is a custom blank message for {{model}}: {{attribute}}"
+      #       attributes:
+      #         login:
+      #           blank: "This is a custom blank message for User login"
+      # Will define custom blank validation message for User model and
+      # custom blank validation message for login attribute of User model.
+      #models:
+
+    # Translate model names. Used in Model.human_name().
+      # For example,
+      #   user: "Dude"
+      # will translate User model name to "Dude"
+    models:
+      post:
+        one: "文章"
+        other: "多個文章"
+      comment:
+        one: "回應"
+        other:  "多個回應"
+
+    # Translate model attribute names. Used in Model.human_attribute_name(attribute).
+      # For example,
+      #   user:
+      #     login: "Handle"
+      # will translate User attribute "login" as "Handle"
+    attributes:
+      post:
+        user: "作者"
+        title: "標題"
+        body: "內文"
+        published_on: "發表日期"
+      comment:
+        email: "電子郵件"
+        author: "回應者"
+        body: "回應內容"
+

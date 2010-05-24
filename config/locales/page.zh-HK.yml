@@ -1,0 +1,27 @@
+zh-HK:
+  page:
+    yes_text: "是"
+    no_text: "否"
+    show_link: "查閱"
+    edit_link: "修改"
+    destroy_link: "消除"
+    delete_link: "刪除"
+    are_you_sure: "請確認繼績執行指示"
+
+    posts:
+      index:
+        title: "文章列表"
+      new:
+        title: "新文章"
+      edit:
+        title: "修改文章"
+      show:
+        title: "查閱文章"
+        no_comment: "未有回應"
+        add_comment_legend: "張帖新回應"
+      delete:
+        title: "你真的要刪除這個文章?"
+    comments:
+      _comment:
+        posted: "張帖: "
+
