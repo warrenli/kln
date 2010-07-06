@@ -31,7 +31,9 @@ zh-HK:
       send_instructions: '您將收到一封電子郵件，並指示有關如何解封自己的帳戶。'
       unlocked: '您的帳戶已成功解鎖。您現在已登錄。'
     mailer:
-      confirmation_instructions: '確認帳戶的指示'
-      reset_password_instructions: '重設密碼的指示'
-      unlock_instructions: '帳戶解封的指示'
-
+      confirmation_instructions:
+        subject: '確認帳戶的指示'
+      reset_password_instructions:
+        subject: '重設密碼的指示s'
+      unlock_instructions:
+        subject: '帳戶解封的指示'

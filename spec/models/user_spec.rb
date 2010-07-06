@@ -2,6 +2,14 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 describe User do
 
+  it { should allow_mass_assignment_of(:email) }
+  it { should allow_mass_assignment_of(:password) }
+  it { should allow_mass_assignment_of(:password_confirmation) }
+  it { should allow_mass_assignment_of(:time_zone) }
+  it { should allow_mass_assignment_of(:roles) }
+
+  it { should have_many(:posts) }
+
   describe "being created with valid email & password" do
     before(:each) do
       @user = User.make

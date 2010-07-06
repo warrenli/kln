@@ -4,3 +4,6 @@
 
 %p= link_to t("page.posts.index.title"), posts_path
 
+:javascript
+  jQuery('#new_post').preventDoubleSubmit();
+

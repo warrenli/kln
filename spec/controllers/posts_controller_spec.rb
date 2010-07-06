@@ -33,7 +33,8 @@ describe PostsController do
     end
 
     it "should assigns @posts" do
-      assigns(:posts).should eq([@my_post, @other_post])
+      assigns(:posts).include?(@my_post).should be_true
+      assigns(:posts).include?(@other_post).should be_true
     end
   end
 

@@ -18,3 +18,13 @@ function clear_form_elements(ele) {
   });
 }
 
+// Usage: jQuery('#my_form').preventDoubleSubmit();
+jQuery.fn.preventDoubleSubmit = function() {
+  jQuery(this).submit(function() {
+    if (this.beenSubmitted)
+      return false;
+    else
+      this.beenSubmitted = true;
+  });
+};
+

@@ -9,7 +9,7 @@ zh-HK:
     errors:
       messages:
         taken: "已經被使用"
-        record_invalid: "校驗失敗: {{errors}}"
+        record_invalid: "校驗失敗: %{errors}"
         # Append your own errors here or at the model/attributes scope.
 
       # You can define own errors for models or model attributes.
@@ -18,7 +18,7 @@ zh-HK:
       # For example,
       #   models:
       #     user:
-      #       blank: "This is a custom blank message for {{model}}: {{attribute}}"
+      #       blank: "This is a custom blank message for %{model}: %{attribute}"
       #       attributes:
       #         login:
       #           blank: "This is a custom blank message for User login"
@@ -38,10 +38,4 @@ zh-HK:
       #   user:
       #     login: "Handle"
       # will translate User attribute "login" as "Handle"
-
-      template:
-        header:
-          one: "共有{{count}}個錯誤導致「{{model}}」無法被保存"
-          other: "共有{{count}}個錯誤導致「{{model}}」無法被保存"
-        body: "下面的字段出現錯誤"
 
