@@ -18,13 +18,16 @@
   = @post.published_on
 
 %p
-  = link_to t("page.edit_link"), edit_post_path(@post)
-  |
-  = link_to t("page.destroy_link"), @post, :confirm => t("page.are_you_sure"), :method => :delete
-  |
-  = link_to t("page.delete_link"), delete_post_path(@post), :class => "delete_post"
-  |
+  - if user_signed_in?
+    = link_to t("page.edit_link"), edit_post_path(@post)
+    |
+    = link_to t("page.destroy_link"), @post, :confirm => t("page.are_you_sure"), :method => :delete
+    |
+    = link_to t("page.delete_link"), delete_post_path(@post), :class => "delete_post"
+    |
   = link_to t("page.posts.index.title"), posts_path
+
+%br
 
 - if @post.comments.count == 0
   %h2#comment_summary
@@ -32,6 +35,8 @@
 -else
   %h2#comment_summary
     =  @post.comments.count.to_s + " " + Comment.human_name
+
+%br
 
 %div#comments
   = render :partial => @post.comments

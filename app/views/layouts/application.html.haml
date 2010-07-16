@@ -11,7 +11,7 @@
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
 
-    = stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "compiled/application"
+    = stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "compiled/application", "compiled/pagination"
     = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "jquery.rails.js", "application"
 
     = #javascript_include_tag :defaults
@@ -43,6 +43,8 @@
 
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
+
+      %br
 
       - if show_title?
         %h1= yield(:title)

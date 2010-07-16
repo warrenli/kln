@@ -1,27 +1,27 @@
-/* line 3, ../../../app/stylesheets/application.sass */
+/* line 3, ../../../app/stylesheets/application.scss */
 body {
   background-color: #4b7399;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
 
-/* line 9, ../../../app/stylesheets/application.sass */
+/* line 9, ../../../app/stylesheets/application.scss */
 a {
   color: blue;
 }
-/* line 11, ../../../app/stylesheets/application.sass */
+/* line 11, ../../../app/stylesheets/application.scss */
 a img {
   border: none;
 }
 
-/* line 14, ../../../app/stylesheets/application.sass */
+/* line 14, ../../../app/stylesheets/application.scss */
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
 
-/* line 19, ../../../app/stylesheets/application.sass */
+/* line 19, ../../../app/stylesheets/application.scss */
 #container {
   width: 75%;
   margin: 0 auto;
@@ -31,7 +31,7 @@ a img {
   margin-top: 20px;
 }
 
-/* line 27, ../../../app/stylesheets/application.sass */
+/* line 29, ../../../app/stylesheets/application.scss */
 #flash_notice,
 #flash_error,
 #flash_alert {
@@ -39,25 +39,25 @@ a img {
   margin: 10px 0;
 }
 
-/* line 33, ../../../app/stylesheets/application.sass */
+/* line 33, ../../../app/stylesheets/application.scss */
 #flash_notice {
   background-color: #ccffcc;
   border: solid 1px #66cc66;
 }
 
-/* line 37, ../../../app/stylesheets/application.sass */
+/* line 38, ../../../app/stylesheets/application.scss */
 #flash_error,
 #flash_alert {
   background-color: #ffcccc;
   border: solid 1px #cc6666;
 }
 
-/* line 42, ../../../app/stylesheets/application.sass */
+/* line 42, ../../../app/stylesheets/application.scss */
 .fieldWithErrors {
   display: inline;
 }
 
-/* line 45, ../../../app/stylesheets/application.sass */
+/* line 45, ../../../app/stylesheets/application.scss */
 .error_messages {
   width: 400px;
   border: 2px solid #cf0000;
@@ -67,7 +67,7 @@ a img {
   background-color: #f0f0f0;
   font-size: 12px;
 }
-/* line 54, ../../../app/stylesheets/application.sass */
+/* line 54, ../../../app/stylesheets/application.scss */
 .error_messages h2 {
   text-align: left;
   padding: 5px 5px 5px 15px;
@@ -77,17 +77,61 @@ a img {
   background-color: #cc0000;
   color: white;
 }
-/* line 63, ../../../app/stylesheets/application.sass */
+/* line 63, ../../../app/stylesheets/application.scss */
 .error_messages p {
   margin: 8px 10px;
 }
-/* line 65, ../../../app/stylesheets/application.sass */
+/* line 65, ../../../app/stylesheets/application.scss */
 .error_messages ul {
   margin: 0;
 }
 
-/* line 68, ../../../app/stylesheets/application.sass */
+/* line 68, ../../../app/stylesheets/application.scss */
 #user_nav {
   float: right;
   font-size: 12px;
+}
+
+/* line 72, ../../../app/stylesheets/application.scss */
+h1 {
+  font-size: 16px;
+  text-decoration: none;
+  color: #666699;
+  margin-bottom: 5px;
+}
+
+/* line 78, ../../../app/stylesheets/application.scss */
+table {
+  background: #fff;
+  width: 100%;
+}
+
+/* line 81, ../../../app/stylesheets/application.scss */
+th {
+  color: white;
+  background: #666699;
+  font-weight: bold;
+  padding: 0.5em;
+  white-space: nowrap;
+}
+
+/* line 87, ../../../app/stylesheets/application.scss */
+a {
+  color: #666699;
+  text-decoration: underline;
+}
+
+/* line 90, ../../../app/stylesheets/application.scss */
+td {
+  padding: 0.5em;
+}
+
+/* line 92, ../../../app/stylesheets/application.scss */
+tr.even td {
+  background: #ddd;
+}
+
+/* line 94, ../../../app/stylesheets/application.scss */
+tr.odd td {
+  background: #eee;
 }

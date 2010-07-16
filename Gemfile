@@ -25,3 +25,5 @@ gem 'faker'
 gem 'machinist'
 gem 'capybara'
 
+gem 'will_paginate', :git=>'git://github.com/mislav/will_paginate.git', :branch=>'rails3'
+

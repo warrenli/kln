@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_filter :get_post, :only => [ :edit, :update, :delete, :destroy ]
 
   def index
-    @posts = Post.all
+    @posts = Post.paginate :page => params[:page], :per_page => 5
     respond_with @posts
   end
 
