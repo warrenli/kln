@@ -1,4 +1,7 @@
 Kln::Application.routes.draw do |map|
+  resources :orders, :only => [:index]
+  match 'orders/change', :to => 'orders#change', :via => 'post'
+
   resources :comments
 
   resources :posts do
@@ -10,6 +13,6 @@ Kln::Application.routes.draw do |map|
 
   devise_for :users
 
-  root :to => "welcome#index"
+  root :to => "orders#index"
 end
 

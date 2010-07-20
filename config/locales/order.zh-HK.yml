@@ -1,0 +1,15 @@
+zh-HK:
+  activerecord:
+    models:
+      order:
+        one: "訂購單"
+        other: "多個訂購單"
+
+    attributes:
+      order:
+        customer: "顧客姓名"
+        currency: "貨幣"
+        price: "價值"
+        delivered: "已送貨"
+        expiration_date: "失效日期"
+

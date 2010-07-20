@@ -1,0 +1,80 @@
+<% content_for :head do %>
+  <%= javascript_include_tag('jqgrid/jquery.layout.js') %>
+  <%= javascript_include_tag("jqgrid/i18n/grid.locale-#{I18n.locale}.js") %>
+  <%= javascript_include_tag('jqgrid/jquery.jqGrid.min.js') %>
+  <%= javascript_include_tag('jqgrid/jquery.tablednd.js') %>
+  <%= javascript_include_tag('jqgrid/jquery.contextmenu.js') %>
+  <%= jqgrid_stylesheets %>
+
+  <script type="text/javascript">
+  $(function() {
+    $('#flash_alert').hide();
+
+    $("#expiration_date").live('click', function(){
+      $(this).datepicker({showOn: 'both', dateFormat:"yy-mm-dd"}).focus();
+    });
+  });
+
+	function afterSubmit(r, data, action) {
+	  if(r.responseText != "") {
+	    $('#flash_alert').html('<p>'+r.responseText+'</p>');
+	    $('#flash_alert').slideDown();
+
+  	  window.setTimeout(function() {
+        $('#flash_alert').slideUp();
+      }, 6000);
+      return false;
+    }
+    return true;
+	}
+  </script>
+
+<% end %>
+<% title Order.human_name %>
+
+<div id="flash_alert">&nbsp;</div>
+<br /><br />
+<%= raw(
+  jqgrid("#{Order.human_name}", "my_orders", "/orders",
+	  [
+		  { :field => "id", :label => "", :width => 0.1, :editable => false, :resizable => false, :sortable => false },
+		  { :field => "customer", :label => Order.human_attribute_name("customer"), :width => 250, :editable => true },
+		  { :field => "currency", :label => Order.human_attribute_name("currency"), :width => 100, :editable => true, :align => 'center',
+		    :edittype => "select", :editoptions => { :value => [["AUD","AUD"], ["EUR", "EUR"], ["HKD","HKD"], ["USD","USD"]] }  },
+		  { :field => "price", :label => Order.human_attribute_name("price"), :width => 100, :editable => true, :align => 'right' },
+		  { :field => "delivered", :label => Order.human_attribute_name("delivered"), :width => 100, :resizable => false, :align => 'center',
+		    :editable => true,  :edittype => "checkbox", :editoptions => { :value => [[1, 0]] } },
+		  { :field => "expiration_date", :label => Order.human_attribute_name("expiration_date"), :width => 150, :editable => true, :align => 'center' }
+	  ],
+	  { :height => 250, :search => 'true', :rownumbers => 'true', :autowidth => 'true',
+	    :add => 'true', :edit => 'true', :inline_edit => 'false', :delete => 'true',
+	    :edit_url => "/orders/change", :error_handler => "afterSubmit"  }
+  )
+) %>
+
+<% #
+   # options:
+   #     {
+   #       :rows_per_page       => '10',
+   #       :sort_column         => '',
+   #       :sort_order          => '',
+   #       :height              => '150',
+   #       :gridview            => 'false',
+   #       :error_handler       => 'null',
+   #       :inline_edit_handler => 'null',
+   #       :add                 => 'false',
+   #       :delete              => 'false',
+   #       :search              => 'true',
+   #       :edit                => 'false',
+   #       :inline_edit         => 'false',
+   #       :autowidth           => 'false',
+   #       :rownumbers          => 'false'
+   #     }
+   #
+%>
+
+<br/>
+<h1 align="center">
+<%= link_to t("page.posts.index.title"), posts_path %>
+</h1>
+

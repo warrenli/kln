@@ -73,30 +73,31 @@
 .flickr_pagination .page_info {
   color: #666699;
   padding-top: .8em;
+  padding-bottom: .8em;
 }
 
-/* line 40, ../../../app/stylesheets/pagination.scss */
+/* line 41, ../../../app/stylesheets/pagination.scss */
 .flickr_pagination .prev_page, .flickr_pagination .next_page {
   border-width: 2px;
 }
 
-/* line 42, ../../../app/stylesheets/pagination.scss */
+/* line 43, ../../../app/stylesheets/pagination.scss */
 .flickr_pagination .prev_page {
   margin-right: 1em;
 }
 
-/* line 44, ../../../app/stylesheets/pagination.scss */
+/* line 45, ../../../app/stylesheets/pagination.scss */
 .flickr_pagination .next_page {
   margin-left: 1em;
 }
 
-/* line 47, ../../../app/stylesheets/pagination.scss */
+/* line 48, ../../../app/stylesheets/pagination.scss */
 .digg_pagination {
   background: white;
   /* self-clearing method: */
 }
 
-/* line 50, ../../../app/stylesheets/pagination.scss */
+/* line 51, ../../../app/stylesheets/pagination.scss */
 .digg_pagination a, .digg_pagination span {
   padding: .2em .5em;
   display: block;
@@ -104,13 +105,13 @@
   margin-right: 1px;
 }
 
-/* line 55, ../../../app/stylesheets/pagination.scss */
+/* line 56, ../../../app/stylesheets/pagination.scss */
 .digg_pagination span.disabled {
   color: #999;
   border: 1px solid #DDD;
 }
 
-/* line 58, ../../../app/stylesheets/pagination.scss */
+/* line 59, ../../../app/stylesheets/pagination.scss */
 .digg_pagination span.current {
   font-weight: bold;
   background: #2E6AB1;
@@ -118,20 +119,20 @@
   border: 1px solid #2E6AB1;
 }
 
-/* line 63, ../../../app/stylesheets/pagination.scss */
+/* line 64, ../../../app/stylesheets/pagination.scss */
 .digg_pagination a {
   text-decoration: none;
   color: #105CB6;
   border: 1px solid #9AAFE5;
 }
 
-/* line 67, ../../../app/stylesheets/pagination.scss */
+/* line 68, ../../../app/stylesheets/pagination.scss */
 .digg_pagination a:hover, .digg_pagination a:focus {
   color: #003;
   border-color: #003;
 }
 
-/* line 70, ../../../app/stylesheets/pagination.scss */
+/* line 71, ../../../app/stylesheets/pagination.scss */
 .digg_pagination .page_info {
   background: #2E6AB1;
   color: white;
@@ -141,14 +142,14 @@
   text-align: center;
 }
 
-/* line 77, ../../../app/stylesheets/pagination.scss */
+/* line 78, ../../../app/stylesheets/pagination.scss */
 .digg_pagination .page_info b {
   color: #003;
   background: #6aa6ed;
   padding: .1em .25em;
 }
 
-/* line 81, ../../../app/stylesheets/pagination.scss */
+/* line 82, ../../../app/stylesheets/pagination.scss */
 .digg_pagination:after {
   content: ".";
   display: block;
@@ -157,12 +158,12 @@
   visibility: hidden;
 }
 
-/* line 87, ../../../app/stylesheets/pagination.scss */
+/* line 88, ../../../app/stylesheets/pagination.scss */
 * html .digg_pagination {
   height: 1%;
 }
 
-/* line 89, ../../../app/stylesheets/pagination.scss */
+/* line 90, ../../../app/stylesheets/pagination.scss */
 *:first-child + html .digg_pagination {
   overflow: hidden;
 }

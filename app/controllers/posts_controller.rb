@@ -1,11 +1,14 @@
 class PostsController < ApplicationController
-  respond_to :html
+  respond_to :html, :js
   before_filter :authenticate_user!, :except => [ :index, :show ]
   before_filter :get_post, :only => [ :edit, :update, :delete, :destroy ]
 
   def index
     @posts = Post.paginate :page => params[:page], :per_page => 5
-    respond_with @posts
+    respond_with(@post) do |format|
+      format.html { render @post }
+      format.js   { render :layout => false}
+    end
   end
 
   def show

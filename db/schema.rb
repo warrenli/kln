@@ -9,13 +9,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100520000002) do
+ActiveRecord::Schema.define(:version => 20100717000003) do
 
   create_table "comments", :force => true do |t|
     t.integer  "post_id",    :null => false
     t.string   "email"
     t.string   "author"
     t.text     "body",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", :force => true do |t|
+    t.string   "customer",                                                         :null => false
+    t.string   "currency",                                      :default => "HKD", :null => false
+    t.decimal  "price",           :precision => 8, :scale => 2, :default => 0.0,   :null => false
+    t.boolean  "delivered",                                     :default => false, :null => false
+    t.date     "expiration_date",                                                  :null => false
+    t.boolean  "deleted",                                       :default => false, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

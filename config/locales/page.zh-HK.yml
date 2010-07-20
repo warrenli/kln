@@ -25,3 +25,10 @@ zh-HK:
       _comment:
         posted: "張帖: "
 
+    orders:
+      deleted_msg: "訂購單已刪除"
+      record_added_msg: "新訂購單已接納"
+      add_record_error_msg: "加入新訂購單出現問題"
+      changed_msg: "訂購單已修改"
+      unknown_action_msg: "沒有這個功能"
+
