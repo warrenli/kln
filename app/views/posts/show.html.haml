@@ -2,7 +2,7 @@
 
 %p
   %strong
-    = "Author" + " : "
+    = Post.human_attribute_name("user") + " : "
   = @post.user.email
 %p
   %strong
@@ -40,6 +40,8 @@
 
 %div#comments
   = render :partial => @post.comments
+
+%br
 
 = form_for [@post, Comment.new], :remote => true do |f|
   %fieldset

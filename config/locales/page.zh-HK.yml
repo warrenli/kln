@@ -9,6 +9,9 @@ zh-HK:
     are_you_sure: "請確認繼績執行指示"
 
     posts:
+      not_found_msg: "找不到閱下要求的文章"
+      created_msg: "新文章已接納"
+      updated_msg: "文章已修改"
       index:
         title: "文章列表"
       new:

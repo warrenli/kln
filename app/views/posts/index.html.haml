@@ -1,5 +1,5 @@
 - title t("page.posts.index.title")
-
+- puts flash.inspect
 #posts
   = render 'posts'
 
@@ -11,7 +11,7 @@
     // Uses the new live method in jQuery 1.3+
     $('a.delete_post').live('click', function(event) {
 
-        if ( confirm("Are you sure you want to delete this PPost?") )
+        if ( confirm("Are you sure you want to delete this Post?") )
             $.ajax({
                 url: this.href.replace('/delete', ''),
                 type: 'post',

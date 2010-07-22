@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.active.find(params[:id])
     respond_with @post
   rescue
-    redirect_to(posts_path, :notice => '*Post not found!')
+    redirect_to(posts_path, :notice => t("page.posts.not_found_msg"))
   end
 
   def new
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
     @post.user = current_user
     if @post.save
-      redirect_to(@post, :notice => 'Post was successfully created.')
+      redirect_to(@post, :notice => t("page.posts.created_msg"))
     else
       render "new"
     end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(params[:post])
-      redirect_to(@post, :notice => 'Post was successfully updated.')
+      redirect_to(@post, :notice => t("page.posts.updated_msg"))
     else
       render "edit"
     end
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
     redirect_to(@post) and return if params[:cancel]
 
     @post.destroy
-    redirect_to posts_path, :notice => "#{@post.title} was deleted"
+    redirect_to posts_path
   end
 
   protected
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
   def get_post
     @post = Post.active.by_user(current_user).find(params[:id])
   rescue
-    redirect_to(posts_path, :notice => '**Post not found!')
+    redirect_to(posts_path, :notice => t("page.posts.not_found_msg"))
   end
 end
 

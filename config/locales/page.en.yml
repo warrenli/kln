@@ -9,6 +9,9 @@ en:
     are_you_sure: "Are you sure"
 
     posts:
+      not_found_msg: "Post not found!"
+      created_msg: "Post was successfully created."
+      updated_msg: "Post was successfully updated."
       index:
         title: "Post Listing"
       new:
