@@ -1,0 +1,39 @@
+- if ["new", "edit"].include? operation
+  %h1
+    = t("page.tasks.#{operation}")
+
+= form_tag('/tasks', :remote => true, :class => "bp") do
+  %p
+    = hidden_field_tag "operation", operation
+  %p
+    = hidden_field_tag "task[id]", task.id||"_empty"
+  %p
+    %label
+      = Task.human_attribute_name("description")
+    %br
+    = text_field_tag "task[description]", task.description
+  %p
+    %label
+      = Task.human_attribute_name("priority")
+    %br
+    = select_tag "task[priority]", options_for_select(["High", "Moderate", "Low", "Remote"], task.priority)
+  %p
+    %label
+      = Task.human_attribute_name("due_on")
+    %br
+    = text_field_tag "task[due_on]", task.due_on.to_s
+  %p
+    = submit_tag t("page.tasks.#{operation}"), :disable_with => "Please wait..."
+    = submit_tag t("page.tasks.reset_button"), { :name => 'reset', :id => 'task_reset_button', :type => "reset" }
+
+:javascript
+  $(function() {
+    $("#task_due_on").datetimepicker(
+        { dateFormat: 'yy-mm-dd',
+          showSecond: true,
+          timeFormat: 'hh:mm:ss',
+          stepMinute: 15,
+          stepSecond: 15
+        });
+  });
+

@@ -313,7 +313,7 @@ describe PostsController do
         end
 
         it "should not found the post" do
-          lambda { Post.find(@my_post.id) }.should raise_error(ActiveRecord::RecordNotFound)
+          lambda { Post.active.find(@my_post.id) }.should raise_error(ActiveRecord::RecordNotFound)
         end
 
         it "should be redirected to index page" do
@@ -326,8 +326,8 @@ describe PostsController do
           delete :destroy, :id => @my_post.id, :cancel => true
         end
 
-        it "should not the post" do
-          Post.find(@my_post.id).should eq(@my_post)
+        it "should still find the post" do
+          Post.active.find(@my_post.id).should eq(@my_post)
         end
 
         it "should be redirected to show page" do
@@ -341,7 +341,7 @@ describe PostsController do
         end
 
         it "should still found the post" do
-          Post.find(@other_post.id).should eq(@other_post)
+          Post.active.find(@other_post.id).should eq(@other_post)
         end
 
         it "should be redirected to index page" do

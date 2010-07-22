@@ -1,0 +1,25 @@
+- title t("page.tasks.title")
+
+#flash_alert
+
+#tasks
+  = render 'tasks'
+%br
+%p#task_action
+  = link_to t("page.tasks.new"), new_task_path, :remote => true
+%br
+#task_form
+
+:javascript
+  jQuery(function($) {
+    $("#flash_alert").hide();
+    $("#task_form").hide();
+
+    $("#task_reset_button").live('click', function(event) {
+       $("#task_form").slideUp(3000);
+       $("#task_action").show();
+       $form = $(this).closest("form");
+       $form[0].reset();
+    });
+  });
+

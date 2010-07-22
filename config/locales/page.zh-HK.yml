@@ -32,3 +32,14 @@ zh-HK:
       changed_msg: "訂購單已修改"
       unknown_action_msg: "沒有這個功能"
 
+    tasks:
+      title: "任務"
+      new: "新任務"
+      edit: "修改 任務"
+      reset_button: "重置"
+      deleted_msg: "任務已刪除"
+      record_added_msg: "新任務已接納"
+      add_record_error_msg: "加入新任務出現問題"
+      changed_msg: "任務已修改"
+      unknown_action_msg: "沒有這個功能"
+

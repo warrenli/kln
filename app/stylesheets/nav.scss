@@ -1,0 +1,38 @@
+#nav {
+  background-color: #555555;
+  margin: 0 0 0 0;
+  padding: 0;
+  height: 18px; }
+#nav ul {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center; }
+#nav ul li {
+  display: block;
+  float: left;
+  text-align: center;
+  padding: 0;
+  margin: 0; }
+#nav ul li a {
+  background: #555555;
+  width: 120px;
+  height: 18px;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  border-right: 1px solid #EEEEEE;
+  padding: 0;
+  margin: 0 0 0 0;
+  color: #EEEEEE;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font: normal 14px "Lucida Grande", "Lucida Sans Unicode", verdana, lucida, sans-serif; }
+#nav ul li a:hover {
+  color: #555555;
+  background: #EEEEEE;}
+#nav #active {
+  border-left: 1px solid #EEEEEE; }
+

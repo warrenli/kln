@@ -27,3 +27,8 @@
     =page_entries_info @posts
   = will_paginate @posts
 
+:javascript
+  $(function() {
+    $('.pagination a').attr('data-remote', 'true')
+  });
+

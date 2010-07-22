@@ -1,0 +1,29 @@
+%table
+  %thead
+    %tr
+      %th= Task.human_attribute_name('description')
+      %th= Task.human_attribute_name('priority')
+      %th= Task.human_attribute_name('due_on')
+      %th{ :colspan => 4 }
+
+  %tbody
+    - for task in @tasks
+      %tr{ :class => cycle(:odd, :even) }
+        %td= task.description
+        %td= task.priority
+        %td= task.due_on
+        %td
+          = link_to t("page.edit_link"), edit_task_path(task.id), :remote => true
+        %td
+          = link_to t("page.destroy_link"), delete_task_path(task.id), :confirm => t("page.are_you_sure"), :method => :delete, :remote => true, :class => "delete_task"
+
+%div(class="flickr_pagination")
+  %div(class="page_info")
+    =page_entries_info @tasks
+  = will_paginate @tasks
+
+:javascript
+  $(function() {
+    $('.pagination a').attr('data-remote', 'true')
+  });
+

@@ -27,8 +27,19 @@ en:
 
     orders:
       deleted_msg: "Order deleted"
-      record_added_msg: "New record added"
-      add_record_error_msg: "Error adding new record"
+      record_added_msg: "New order added"
+      add_record_error_msg: "Error adding new order"
       changed_msg: "Order changed"
+      unknown_action_msg: "Unknow action"
+
+    tasks:
+      title: "Task Listing"
+      new: "New Task"
+      edit: "Update Task"
+      reset_button: "Cancel"
+      deleted_msg: "Task deleted"
+      record_added_msg: "New task added"
+      add_record_error_msg: "Error adding new task"
+      changed_msg: "Task changed"
       unknown_action_msg: "Unknow action"
 

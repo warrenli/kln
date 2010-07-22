@@ -36,8 +36,8 @@ class OrdersController < ApplicationController
                      :expiration_date => params["expiration_date"] }
     case params["oper"]
     when "del"
-      Order.find(params["id"]).destroy
-        message << t('page.orders.deleted_msg')
+      Order.active.find(params["id"]).destroy
+      message << t('page.orders.deleted_msg')
     when "add"
       if params["id"] == "_empty"
         order = Order.create(order_params)
@@ -46,7 +46,7 @@ class OrdersController < ApplicationController
         message << t('page.orders.add_record_error_msg')
       end
     when "edit"
-      order = Order.find(params["id"])
+      order = Order.active.find(params["id"])
       if order.update_attributes(order_params)
         message << t('page.orders.changed_msg')
       end

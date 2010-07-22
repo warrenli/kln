@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_filter :get_post, :only => [ :edit, :update, :delete, :destroy ]
 
   def index
-    @posts = Post.paginate :page => params[:page], :per_page => 5
+    @posts = Post.active.paginate :page => params[:page], :per_page => 5
     respond_with(@post) do |format|
       format.html { render @post }
       format.js   { render :layout => false}
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.active.find(params[:id])
     respond_with @post
   rescue
     redirect_to(posts_path, :notice => '*Post not found!')
@@ -23,7 +23,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    #@post = Post.find(params[:id])
   end
 
   def create
@@ -37,7 +36,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    #@post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
       redirect_to(@post, :notice => 'Post was successfully updated.')
     else
@@ -46,11 +44,9 @@ class PostsController < ApplicationController
   end
 
   def delete
-    #@post = Post.find( params[:id] )
   end
 
   def destroy
-    #@post = Post.find(params[:id])
     redirect_to(@post) and return if params[:cancel]
 
     @post.destroy
@@ -60,7 +56,7 @@ class PostsController < ApplicationController
   protected
 
   def get_post
-    @post = Post.by_user(current_user).find(params[:id])
+    @post = Post.active.by_user(current_user).find(params[:id])
   rescue
     redirect_to(posts_path, :notice => '**Post not found!')
   end

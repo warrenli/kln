@@ -38,8 +38,23 @@ describe Post do
 
       Post.by_user(@user).find(@post.id).should == @post
     end
-  end
 
+    it "should be an active post" do
+      @post.deleted.should == false
+      Post.active.include?(@post).should be_true
+    end
+
+    it "should not be physically deleted" do
+      lambda { @post.destroy }.should_not change(Post, :count)
+    end
+
+    it "should only be marked as deleted" do
+      before_count = Post.active.size
+      @post.destroy
+      after_count = Post.active.size
+      (before_count - after_count).should == 1
+    end
+  end
 
 end
 

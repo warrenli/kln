@@ -1,0 +1,6 @@
+$('#task_form').hide();
+$('#flash_alert').hide();
+$("#task_form").slideDown(3000);
+$("#task_form").html("<%= escape_javascript( render("form", :task => @task, :operation => "new" ) ) %>");
+$("#task_action").hide();
+

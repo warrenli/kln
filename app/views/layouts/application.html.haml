@@ -11,8 +11,8 @@
     /[if lt IE 8]
       = stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection'
 
-    = stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "compiled/application", "compiled/pagination"
-    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "jquery.rails.js", "application"
+    = stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "compiled/application.css", "compiled/pagination.css", "compiled/nav.css"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "jquery.rails.js", "application.js", "jquery-ui-timepicker-addon-0.5.min.js"
 
     = #javascript_include_tag :defaults
     = csrf_meta_tag
@@ -40,6 +40,17 @@
           - else
             = link_to "#{v}", url_for( {:controller => self.controller_name, :action => self.action_name, :locale => "#{k}"} )
 
+      %br
+      #nav
+        %ul
+          %li
+            = link_to "Home", root_path, :id => 'active'
+          %li
+            = link_to "RESTful - CRUD", posts_url
+          %li
+            = link_to "Ajax - CRUD", tasks_url
+          %li
+            = link_to "jqGrid - CRUD", orders_url
 
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"

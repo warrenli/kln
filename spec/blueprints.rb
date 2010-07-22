@@ -28,3 +28,17 @@ Comment.blueprint do
   body   { Sham.body}
 end
 
+Order.blueprint do
+  customer        { Sham.name }
+  currency        "USD"
+  price           101.99
+  delivered       false
+  expiration_date Date.today
+end
+
+Task.blueprint do
+  description { Sham.title }
+  priority    "Low"
+  due_on      Date.today
+end
+

@@ -5,6 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.text :body,       :null => false
       t.date :published_on
       t.integer :user_id, :null => false
+      t.boolean :deleted, :null => false, :default => false
       t.timestamps
     end
   end

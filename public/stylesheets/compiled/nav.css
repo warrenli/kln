@@ -1,0 +1,54 @@
+/* line 1, ../../../app/stylesheets/nav.scss */
+#nav {
+  background-color: #555555;
+  margin: 0 0 0 0;
+  padding: 0;
+  height: 18px;
+}
+
+/* line 6, ../../../app/stylesheets/nav.scss */
+#nav ul {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+/* line 12, ../../../app/stylesheets/nav.scss */
+#nav ul li {
+  display: block;
+  float: left;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 18, ../../../app/stylesheets/nav.scss */
+#nav ul li a {
+  background: #555555;
+  width: 120px;
+  height: 18px;
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  border-right: 1px solid #EEEEEE;
+  padding: 0;
+  margin: 0 0 0 0;
+  color: #EEEEEE;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font: normal 14px "Lucida Grande", "Lucida Sans Unicode", verdana, lucida, sans-serif;
+}
+
+/* line 33, ../../../app/stylesheets/nav.scss */
+#nav ul li a:hover {
+  color: #555555;
+  background: #EEEEEE;
+}
+
+/* line 36, ../../../app/stylesheets/nav.scss */
+#nav #active {
+  border-left: 1px solid #EEEEEE;
+}

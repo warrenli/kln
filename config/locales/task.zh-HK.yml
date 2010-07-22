@@ -1,0 +1,13 @@
+zh-HK:
+  activerecord:
+    models:
+      task:
+        one: "任務"
+        other: "多個任務"
+
+    attributes:
+      task:
+        description: "說明"
+        priority: "重要性"
+        due_on:  "失效日期"
+
