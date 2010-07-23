@@ -4,6 +4,13 @@ namespace :db do
     require 'populator'
     require 'faker'
 
+    Post.populate 10 do |post|
+      post.user_id   = User.last.id
+      post.title  = "#{Faker::Lorem.sentence(1)}"
+      post.body   = "#{Faker::Lorem.sentence(2)}"
+      post.published_on = "2010-07-01"
+    end
+
     Order.populate 50 do |order|
       order.customer = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
       order.currency = ['AUD','EUR','HKD','USD']

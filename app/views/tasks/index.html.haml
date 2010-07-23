@@ -16,8 +16,9 @@
     $("#task_form").hide();
 
     $("#task_reset_button").live('click', function(event) {
-       $("#task_form").slideUp(3000);
-       $("#task_action").show();
+       $("#task_form").slideUp(3000, function(){
+         $("#task_action").show();
+       });
        $form = $(this).closest("form");
        $form[0].reset();
     });

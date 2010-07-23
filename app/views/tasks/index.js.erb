@@ -6,7 +6,8 @@
     $('#flash_alert').slideUp();
   }, 6000)
 <% end %>
-$("#task_action").show();
-$('#task_form').slideUp(3000);
+$('#task_form').slideUp(3000, function(){
+  $("#task_action").show();
+});
 $("#tasks").html("<%= escape_javascript( render("tasks") ) %>");
 
