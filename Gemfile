@@ -24,6 +24,8 @@ gem 'database_cleaner'
 gem 'faker'
 gem 'machinist'
 gem 'capybara'
+#gem 'capybara-envjs'
+gem 'launchy'
 
 gem 'will_paginate', :git=>'git://github.com/mislav/will_paginate.git', :branch=>'rails3'
 gem 'populator'

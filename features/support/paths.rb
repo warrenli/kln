@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module NavigationHelpers
   # Maps a name to a path. Used by the
   #
@@ -10,6 +12,22 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /首頁/
+      '/'
+    when /English language/
+      '/?locale=en'
+    when /中文/
+      '/?locale=zh-HK'
+    when /the sign in page/
+      new_user_session_path
+    when /the new post page/
+      new_post_path
+    when /新文章網頁/
+      new_post_path
+    when /path "(.+)"/
+      $1
+    when /網頁"(.*)"/
+      $1
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
@@ -31,3 +49,4 @@ module NavigationHelpers
 end
 
 World(NavigationHelpers)
+
