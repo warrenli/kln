@@ -5,7 +5,7 @@
     == #{ time_ago_in_words(comment.created_at) }
     %br
     %a{ :href => "mailto:#{comment.email}" }
-      = comment.author.force_encoding("UTF-8")
+      = comment.author
     %br
-    = comment.body.force_encoding("UTF-8")
+    = comment.body
 

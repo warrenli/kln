@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.active.find(params[:id])
+    @post = Post.includes(:comments).active.find(params[:id])
     respond_with @post
   rescue
     redirect_to(posts_path, :notice => t("page.posts.not_found_msg"))

@@ -1,4 +1,4 @@
-Kln::Application.routes.draw do |map|
+Kln::Application.routes.draw do
   resources :orders, :only => [:index]
   match 'orders/change', :to => 'orders#change', :via => 'post'
 
