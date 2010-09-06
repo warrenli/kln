@@ -1,23 +1,24 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
+gem 'rails', '3.0.0'
 
-# gem 'sqlite3-ruby', :require => 'sqlite3'
+# gem 'sqlite3-ruby'
 # gem 'mysql'    Problem handling Chinese
 # gem 'ruby-mysql'
 gem 'mysql2'
 
-gem 'devise', :git=>'git://github.com/plataformatec/devise.git', :branch=>'v1.1'
+gem 'devise'
 
-gem 'haml', '= 3.0.9'
-gem 'compass', '= 0.10.2'
+gem 'haml'
+gem 'compass'
 gem "nifty-generators"
-gem 'will_paginate', :git=>'git://github.com/mislav/will_paginate.git', :branch=>'rails3'
+gem "will_paginate", "~> 3.0.pre2"
+
 gem 'faker'
 gem 'populator'
 
 group :development, :test do
-  gem 'rspec-rails', '= 2.0.0.beta.19'
+  gem 'rspec-rails', '= 2.0.0.beta.20'
 end
 
 group :test do
